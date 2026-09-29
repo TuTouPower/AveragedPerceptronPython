@@ -77,11 +77,11 @@ class AveragedPerceptron(object):
 
     def save(self, path):
         '''Save the pickled model weights.'''
-        return pickle.dump(dict(self.weights), open(path, 'w'))
+        return pickle.dump(dict(self.weights), open(path, 'wb'))
 
     def load(self, path):
         '''Load the pickled model weights.'''
-        self.weights = pickle.load(open(path))
+        self.weights = pickle.load(open(path, 'rb'))
         return None
 
 
